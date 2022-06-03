@@ -1,0 +1,26 @@
+{
+    "name": "softspring/dynamic-form-type",
+    "description": "This component allows to create dynamic forms from an array configuration",
+    "type": "symfony-library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.4",
+        "symfony/form": "^5.0 || ^6.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "9999999-dev",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Softspring\\Component\\DynamicFormType\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Softspring\\Component\\DynamicFormType\\Test\\": "tests"
+        }
+    }
+}
