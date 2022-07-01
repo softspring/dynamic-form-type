@@ -61,7 +61,7 @@ class DynamicFormTypeTest extends TypeTestCase
                     'type' => 'text',
                     'type_options' => [
                         'translation_domain' => 'custom',
-                    ]
+                    ],
                 ],
             ],
         ];
@@ -151,5 +151,20 @@ class DynamicFormTypeTest extends TypeTestCase
         ];
 
         $form = $this->factory->create(DynamicFormType::class, [], $config);
+    }
+
+    public function testInvalidContraints()
+    {
+        $config = [
+            'form_fields' => [
+                'custom' => [
+                    'type' => 'invalid',
+                ],
+            ],
+        ];
+
+        $form = $this->factory->create(DynamicFormType::class, [], $config);
+
+
     }
 }

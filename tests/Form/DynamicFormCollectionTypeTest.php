@@ -19,7 +19,7 @@ class DynamicFormCollectionTypeTest extends TypeTestCase
         ];
 
         $form = $this->factory->create(DynamicFormCollectionType::class, [
-            ['test' => 'data']
+            ['test' => 'data'],
         ], $config);
         $view = $form->createView();
 

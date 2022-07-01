@@ -24,7 +24,7 @@ trait DynamicFormTrait
 
     protected function preprocessTypeOptions(array $options): array
     {
-        foreach ($options['constraints']??[] as $i => $constraintConfig) {
+        foreach ($options['constraints'] ?? [] as $i => $constraintConfig) {
             if (empty($constraintConfig['constraint'])) {
                 throw new InvalidConfigurationException(sprintf('Invalid constraint configuration, you must specify a constraint type'));
             }
