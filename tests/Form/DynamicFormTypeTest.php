@@ -7,10 +7,14 @@ use Symfony\Component\Form\Exception\InvalidConfigurationException;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Test\Traits\ValidatorExtensionTrait;
 use Symfony\Component\Form\Test\TypeTestCase;
+use Symfony\Component\Validator\Constraints;
 
 class DynamicFormTypeTest extends TypeTestCase
 {
+    use ValidatorExtensionTrait;
+
     public function testEmptyForm()
     {
         $config = [];
@@ -153,18 +157,77 @@ class DynamicFormTypeTest extends TypeTestCase
         $form = $this->factory->create(DynamicFormType::class, [], $config);
     }
 
-    public function testInvalidContraints()
+    public function testInvalidConstraint()
     {
+        $this->expectException(InvalidConfigurationException::class);
+        $this->expectExceptionMessage('Invalid constraint configuration, you must specify a constraint type');
+
         $config = [
             'form_fields' => [
-                'custom' => [
-                    'type' => 'invalid',
+                'test1' => [
+                    'type' => 'text',
+                    'type_options' => [
+                        'constraints' => [
+                            [],
+                        ],
+                    ],
                 ],
             ],
         ];
 
         $form = $this->factory->create(DynamicFormType::class, [], $config);
+    }
 
+    public function testInvalidConstraintType()
+    {
+        $this->expectException(InvalidConfigurationException::class);
+        $this->expectExceptionMessageMatches("/Constraint 'invalid' not found in dynamic form./i");
 
+        $config = [
+            'form_fields' => [
+                'test1' => [
+                    'type' => 'text',
+                    'type_options' => [
+                        'constraints' => [
+                            ['constraint' => 'invalid'],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $form = $this->factory->create(DynamicFormType::class, [], $config);
+    }
+
+    public function testConstraints()
+    {
+        $config = [
+            'form_fields' => [
+                'test1' => [
+                    'type' => 'text',
+                    'type_options' => [
+                        'constraints' => [
+                            ['constraint' => 'notBlank'],
+                            ['constraint' => 'range', 'options' => ['min' => 1, 'max' => 100]],
+                            ['constraint' => CustomConstraint::class],
+                        ],
+                    ],
+                ],
+            ],
+        ];
+
+        $form = $this->factory->create(DynamicFormType::class, [], $config);
+        $processedConstraints = $form->get('test1')->getConfig()->getOptions()['constraints'];
+
+        // assert first constraint
+        $this->assertInstanceOf(Constraints\NotBlank::class, $processedConstraints[0]);
+
+        // assert second constraint
+        $this->assertInstanceOf(Constraints\Range::class, $processedConstraints[1]);
+        $this->assertEquals(1, $processedConstraints[1]->min);
+        $this->assertEquals(100, $processedConstraints[1]->max);
+
+        // assert third constraint
+        $this->assertInstanceOf(CustomConstraint::class, $processedConstraints[2]);
     }
 }
