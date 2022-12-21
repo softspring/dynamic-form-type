@@ -1,0 +1,12 @@
+includes:
+	- phpstan-baseline.neon
+
+parameters:
+    level: 5
+    paths:
+        - src/
+        - tests/
+    bootstrapFiles:
+        - vendor/autoload.php
+#    ignoreErrors:
+#        - "#expects Symfony\\\\Contracts\\\\EventDispatcher\\\\Event, Softspring\\\\Component\\\\Events\\\\GetResponseEventInterface given.$#"
