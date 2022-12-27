@@ -24,5 +24,8 @@
         "psr-4": {
             "Softspring\\Component\\DynamicFormType\\Test\\": "tests"
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }

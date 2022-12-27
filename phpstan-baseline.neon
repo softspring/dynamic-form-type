@@ -1,0 +1,6 @@
+parameters:
+    ignoreErrors:
+        -
+            message: "#Offset 0 does not exist on array\\<string, Symfony\\\\Component\\\\Form\\\\FormView\\>\\.#"
+            path: tests/Form/DynamicFormCollectionTypeTest.php
+            reportUnmatched: false
