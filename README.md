@@ -5,8 +5,8 @@
 [![Latest Unstable Version](https://poser.pugx.org/softspring/dynamic-form-type/v/unstable.svg)](https://packagist.org/packages/softspring/dynamic-form-type)
 [![License](https://poser.pugx.org/softspring/dynamic-form-type/license.svg)](https://packagist.org/packages/softspring/dynamic-form-type)
 [![Total Downloads](https://poser.pugx.org/softspring/dynamic-form-type/downloads)](https://packagist.org/packages/softspring/dynamic-form-type)
-[![Build status](https://github.com/softspring/dynamic-form-type/actions/workflows/php.yml/badge.svg?branch=5.0)](https://github.com/softspring/dynamic-form-type/actions/workflows/php.yml)
-![Coverage](https://raw.githubusercontent.com/softspring/dynamic-form-type/5.0/.github/badges/coverage.svg)
+[![Build status](https://github.com/softspring/dynamic-form-type/actions/workflows/php.yml/badge.svg?branch=5.1)](https://github.com/softspring/dynamic-form-type/actions/workflows/php.yml)
+![Coverage](https://raw.githubusercontent.com/softspring/dynamic-form-type/5.1/.github/badges/coverage.svg)
 
 # Installation
 
