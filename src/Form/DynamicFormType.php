@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class DynamicFormType extends AbstractType
+class DynamicFormType extends AbstractType implements DynamicFormTypeInterface
 {
     use DynamicFormTrait;
 
@@ -15,12 +15,12 @@ class DynamicFormType extends AbstractType
         return 'dynamic_form';
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $this->configureDynamicFormOptions($resolver);
     }
 
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $this->buildDynamicForm($builder, $options);
     }
