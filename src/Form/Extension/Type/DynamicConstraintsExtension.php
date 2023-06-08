@@ -41,9 +41,7 @@ class DynamicConstraintsExtension extends AbstractTypeExtension
             foreach ($constraints as $i => $constraint) {
                 if ($constraint instanceof Constraint) {
                     $constraints[$i] = $constraint;
-                }
-
-                if (isset($constraint['constraint'])) {
+                } elseif (isset($constraint['constraint'])) {
                     $constraintClass = $this->constraintResolver->resolveConstraintClass($constraint['constraint']);
                     $constraints[$i] = new $constraintClass($constraint['options'] ?? []);
                 } else {

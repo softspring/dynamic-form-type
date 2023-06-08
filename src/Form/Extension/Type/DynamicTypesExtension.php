@@ -2,7 +2,7 @@
 
 namespace Softspring\Component\DynamicFormType\Form\Extension\Type;
 
-use Softspring\Component\DynamicFormType\Form\DynamicFormTypeInterface;
+use Softspring\Component\DynamicFormType\Form\DynamicFormType;
 use Softspring\Component\DynamicFormType\Form\Resolver\TypeResolverInterface;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -19,7 +19,7 @@ class DynamicTypesExtension extends AbstractTypeExtension
 
     public static function getExtendedTypes(): iterable
     {
-        return [DynamicFormTypeInterface::class];
+        return [DynamicFormType::class];
     }
 
     public function configureOptions(OptionsResolver $resolver): void
