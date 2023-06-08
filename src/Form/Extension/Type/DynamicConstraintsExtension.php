@@ -44,6 +44,9 @@ class DynamicConstraintsExtension extends AbstractTypeExtension
                 } elseif (isset($constraint['constraint'])) {
                     $constraintClass = $this->constraintResolver->resolveConstraintClass($constraint['constraint']);
                     $constraints[$i] = new $constraintClass($constraint['options'] ?? []);
+                } elseif (is_string($constraint)) {
+                    $constraintClass = $this->constraintResolver->resolveConstraintClass($constraint);
+                    $constraints[$i] = new $constraintClass();
                 } else {
                     throw new InvalidOptionsException('Invalid constraint configuration, you must specify a constraint type');
                 }
