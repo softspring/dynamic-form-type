@@ -2,6 +2,8 @@
 
 namespace Softspring\Component\DynamicFormType\Form\Extension;
 
+use Softspring\Component\DynamicFormType\Form\Extension\Type\DynamicConstraintsExtension;
+use Softspring\Component\DynamicFormType\Form\Extension\Type\DynamicTypesExtension;
 use Softspring\Component\DynamicFormType\Form\Resolver\ConstraintResolverInterface;
 use Softspring\Component\DynamicFormType\Form\Resolver\TypeResolverInterface;
 use Symfony\Component\Form\AbstractExtension;
@@ -20,8 +22,8 @@ class DynamicFormExtension extends AbstractExtension
     protected function loadTypeExtensions(): array
     {
         return [
-            new Type\DynamicTypesExtension($this->typeResolver),
-            new Type\DynamicConstraintsExtension($this->constraintResolver),
+            new DynamicTypesExtension($this->typeResolver),
+            new DynamicConstraintsExtension($this->constraintResolver),
         ];
     }
 }
