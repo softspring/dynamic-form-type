@@ -8,6 +8,7 @@ services:
         tags: [ { name: 'form.type_extension', priority: -200 } ]
 
     Softspring\Component\DynamicFormType\Form\Extension\Type\DynamicTypesExtension:
+        class: Softspring\CmsBundle\Form\Extension\DynamicTypesExtension
         tags: [ { name: 'form.type_extension' } ]
 
     Softspring\Component\DynamicFormType\Form\Resolver\ConstraintResolverInterface:
