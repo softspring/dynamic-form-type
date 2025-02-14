@@ -2,7 +2,7 @@
     "name": "softspring/dynamic-form-type",
     "description": "This component allows to create dynamic forms from an array configuration",
     "type": "symfony-library",
-    "license": "MIT",
+    "license": "AGPL-3.0",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
