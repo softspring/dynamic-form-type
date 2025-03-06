@@ -10,7 +10,7 @@
 
 ## Armonic
 
-This bundle is part of Armonic.
+This bundle is part of [Armonic](https://softspring.es/en/armonic).
 
 ## Documentation
 
