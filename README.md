@@ -8,10 +8,18 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/softspring/dynamic-form-type/ci.yml?branch=5.4&style=flat-square&label=CI)](https://github.com/softspring/dynamic-form-type/actions/workflows/ci.yml)
 ![Coverage](https://raw.githubusercontent.com/softspring/dynamic-form-type/5.4/.github/badges/coverage.svg)
 
-## Installation
+## Armonic
 
-You have all information in [Armonic Docs-Dynamic Form Type](https://armonic.softspring.es/latest/components/dynamic-form-type/install)
+This bundle is part of Armonic.
+
+## Documentation
+
+[Armonic Documentation](https://armonic.softspring.es/latest/components/dynamic-form-type/install)
+
+## Contributing
+
+[Report issues](https://github.com/softspring/dynamic-form-type/issues) and [send Pull Requests](https://github.com/softspring/dynamic-form-type/pulls)
 
 ## License
 
-This bundle is under the MIT license. See the complete license in the bundle [LICENSE](LICENSE) file.
+This package is free and released under the [MIT license](LICENSE).
