@@ -10,11 +10,8 @@
 
 ## Installation
 
-### Applications that use Symfony Flex
+You have all information in [Armonic Docs-Dynamic Form Type](https://armonic.softspring.es/latest/components/dynamic-form-type/install)
 
-Open a command console, enter your project directory and execute:
+## License
 
-```console
-$ composer require softspring/dynamic-form-type
-```
-
+This bundle is under the MIT license. See the complete license in the bundle [LICENSE](LICENSE) file.
