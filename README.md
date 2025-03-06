@@ -8,13 +8,18 @@
 [![CI](https://img.shields.io/github/actions/workflow/status/softspring/dynamic-form-type/ci.yml?branch=5.4&style=flat-square&label=CI)](https://github.com/softspring/dynamic-form-type/actions/workflows/ci.yml)
 ![Coverage](https://raw.githubusercontent.com/softspring/dynamic-form-type/5.4/.github/badges/coverage.svg)
 
-## Installation
+## Armonic
 
-### Applications that use Symfony Flex
+This bundle is part of Armonic.
 
-Open a command console, enter your project directory and execute:
+## Documentation
 
-```console
-$ composer require softspring/dynamic-form-type
-```
+[Armonic Documentation](https://armonic.softspring.es/latest/components/dynamic-form-type/install)
 
+## Contributing
+
+[Report issues](https://github.com/softspring/dynamic-form-type/issues) and [send Pull Requests](https://github.com/softspring/dynamic-form-type/pulls)
+
+## License
+
+This package is free and released under the [MIT license](LICENSE).
