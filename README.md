@@ -14,7 +14,7 @@ This bundle is part of [Armonic](https://softspring.es/en/armonic).
 
 ## Documentation
 
-[Armonic Documentation](https://armonic.softspring.es/latest/components/dynamic-form-type/install)
+[Documentation](https://armonic.softspring.es/latest/components/dynamic-form-type/install)
 
 ## Contributing
 
@@ -22,4 +22,4 @@ This bundle is part of [Armonic](https://softspring.es/en/armonic).
 
 ## License
 
-This package is free and released under the [MIT license](LICENSE).
+This package is free and released under the [AGPL-3.0 license](LICENSE).
