@@ -9,5 +9,4 @@ use Softspring\Component\DynamicFormType\Form\Type\DynamicFormType as BaseDynami
  */
 class DynamicFormType extends BaseDynamicFormType implements DynamicFormTypeInterface
 {
-
 }

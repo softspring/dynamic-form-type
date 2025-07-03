@@ -24,7 +24,7 @@ class DynamicTypesExtension extends AbstractTypeExtension
     {
         return [
             DynamicFormTypeInterface::class, DynamicFormType::class,
-            DeprecatedDynamicFormTypeInterface::class, DeprecatedDynamicFormType::class
+            DeprecatedDynamicFormTypeInterface::class, DeprecatedDynamicFormType::class,
         ];
     }
 

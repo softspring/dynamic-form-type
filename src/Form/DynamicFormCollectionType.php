@@ -9,5 +9,4 @@ use Softspring\Component\DynamicFormType\Form\Type\DynamicFormCollectionType as 
  */
 class DynamicFormCollectionType extends BaseDynamicFormCollectionType
 {
-
 }
