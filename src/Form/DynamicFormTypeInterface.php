@@ -2,6 +2,11 @@
 
 namespace Softspring\Component\DynamicFormType\Form;
 
-interface DynamicFormTypeInterface
+use Softspring\Component\DynamicFormType\Form\Type\DynamicFormTypeInterface as BaseDynamicFormTypeInterface;
+
+/**
+ * @deprecated
+ */
+interface DynamicFormTypeInterface extends BaseDynamicFormTypeInterface
 {
 }

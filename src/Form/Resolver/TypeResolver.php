@@ -31,6 +31,7 @@ class TypeResolver implements TypeResolverInterface
     {
         return [
             'App\Form\Type\\'.ucfirst($type).'Type',
+            'Softspring\Component\DynamicFormType\Form\Type\\'.ucfirst($type).'Type',
             'Symfony\Component\Form\Extension\Core\Type\\'.ucfirst($type).'Type',
             'Symfony\Bridge\Doctrine\Form\Type\\'.ucfirst($type).'Type',
         ];
