@@ -2,12 +2,12 @@
 
 namespace Softspring\Component\DynamicFormType\Form;
 
-use Symfony\Component\Form\AbstractType;
+use Softspring\Component\DynamicFormType\Form\Type\DynamicFormType as BaseDynamicFormType;
 
-class DynamicFormType extends AbstractType implements DynamicFormTypeInterface
+/**
+ * @deprecated
+ */
+class DynamicFormType extends BaseDynamicFormType implements DynamicFormTypeInterface
 {
-    public function getBlockPrefix(): string
-    {
-        return 'dynamic_form';
-    }
+
 }

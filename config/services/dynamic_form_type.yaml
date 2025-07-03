@@ -15,4 +15,4 @@ services:
         class: Softspring\Component\DynamicFormType\Form\Resolver\ConstraintResolver
 
     Softspring\Component\DynamicFormType\Form\Resolver\TypeResolverInterface:
-        class: Softspring\CmsBundle\Form\Resolver\TypeResolver
+        class: Softspring\Component\DynamicFormType\Form\Resolver\TypeResolver
