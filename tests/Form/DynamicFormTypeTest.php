@@ -5,7 +5,7 @@ namespace Softspring\Component\DynamicFormType\Test\Form;
 use Softspring\Component\DynamicFormType\Form\DynamicFormType;
 use Softspring\Component\DynamicFormType\Form\Extension\DynamicFormExtension;
 use Softspring\Component\DynamicFormType\Form\Resolver\ConstraintResolver;
-use Softspring\Component\DynamicFormType\Form\Resolver\TypeResolver;
+use Softspring\Component\DynamicFormType\Form\Resolver\DefaultTypeResolver;
 use Symfony\Component\Form\Exception\InvalidConfigurationException;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -23,7 +23,7 @@ class DynamicFormTypeTest extends TypeTestCase
     {
         $extensions = parent::getExtensions();
 
-        $extensions[] = new DynamicFormExtension(new TypeResolver(), new ConstraintResolver());
+        $extensions[] = new DynamicFormExtension(new DefaultTypeResolver(), new ConstraintResolver());
 
         return $extensions;
     }
