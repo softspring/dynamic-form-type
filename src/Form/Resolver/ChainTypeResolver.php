@@ -2,6 +2,7 @@
 
 namespace Softspring\Component\DynamicFormType\Form\Resolver;
 
+use InvalidArgumentException;
 use Symfony\Component\Form\Exception\InvalidConfigurationException;
 
 class ChainTypeResolver implements TypeResolverInterface
@@ -10,7 +11,7 @@ class ChainTypeResolver implements TypeResolverInterface
     {
         foreach ($resolvers as $resolver) {
             if (!$resolver instanceof TypeResolverInterface) {
-                throw new \InvalidArgumentException(sprintf('All resolvers must implement %s interface.', TypeResolverInterface::class));
+                throw new InvalidArgumentException(sprintf('All resolvers must implement %s interface.', TypeResolverInterface::class));
             }
         }
     }
@@ -19,7 +20,7 @@ class ChainTypeResolver implements TypeResolverInterface
     {
         foreach ($this->resolvers as $resolver) {
             $resolvedType = $resolver->resolveTypeClass($type);
-            if ($resolvedType !== null) {
+            if (null !== $resolvedType) {
                 return $resolvedType;
             }
         }
@@ -39,6 +40,7 @@ class ChainTypeResolver implements TypeResolverInterface
                 $classes = array_merge($classes, $resolver->getPossibleFormClasses($type));
             }
         }
+
         return $classes;
     }
 }
