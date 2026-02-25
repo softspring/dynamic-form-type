@@ -10,6 +10,7 @@
         "symfony/form": "^6.4|^7.4|^8.0"
     },
     "require-dev": {
+        "ergebnis/composer-normalize": "^2.50",
         "friendsofphp/php-cs-fixer": "^3.89",
         "phpstan/phpstan": "^2.1",
         "phpunit/phpunit": "^9.5",
@@ -30,6 +31,9 @@
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        }
     }
 }
