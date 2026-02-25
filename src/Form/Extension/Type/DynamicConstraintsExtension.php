@@ -27,7 +27,7 @@ class DynamicConstraintsExtension extends AbstractTypeExtension
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setAllowedTypes('constraints', [Constraint::class, Constraint::class.'[]', 'array']);
-        $resolver->setNormalizer('constraints', function (Options $options, $constraints) {
+        $resolver->setNormalizer('constraints', function (Options $options, $constraints): array {
             if (is_object($constraints)) {
                 return [$constraints];
             }
@@ -43,7 +43,8 @@ class DynamicConstraintsExtension extends AbstractTypeExtension
                     $constraints[$i] = $constraint;
                 } elseif (isset($constraint['constraint'])) {
                     $constraintClass = $this->constraintResolver->resolveConstraintClass($constraint['constraint']);
-                    $constraints[$i] = new $constraintClass($constraint['options'] ?? []);
+                    $constraintOptions = $constraint['options'] ?? [];
+                    $constraints[$i] = new $constraintClass(...$constraintOptions);
                 } elseif (is_string($constraint)) {
                     $constraintClass = $this->constraintResolver->resolveConstraintClass($constraint);
                     $constraints[$i] = new $constraintClass();
