@@ -11,10 +11,10 @@
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.50",
-        "friendsofphp/php-cs-fixer": "^3.89",
+        "friendsofphp/php-cs-fixer": "^3.94",
         "phpstan/phpstan": "^2.1",
-        "phpunit/phpunit": "^9.5",
-        "rector/rector": "^2.2",
+        "phpunit/phpunit": "^12.5",
+        "rector/rector": "^2.3",
         "symfony/config": "^6.4|^7.4|^8.0",
         "symfony/dependency-injection": "^6.4|^7.4|^8.0",
         "symfony/http-kernel": "^6.4|^7.4|^8.0",
@@ -34,6 +34,11 @@
         "sort-packages": true,
         "allow-plugins": {
             "ergebnis/composer-normalize": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-6.0": "6.0.x-dev"
         }
     }
 }
