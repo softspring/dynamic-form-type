@@ -2,6 +2,8 @@
 
 namespace Softspring\Component\DynamicFormType\Test\Form;
 
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Range;
 use Softspring\Component\DynamicFormType\Form\DynamicFormType;
 use Softspring\Component\DynamicFormType\Form\Extension\DynamicFormExtension;
 use Softspring\Component\DynamicFormType\Form\Resolver\ConstraintResolver;
@@ -140,40 +142,11 @@ class DynamicFormTypeTest extends TypeTestCase
     public function testCustomDynamicFormWithClassNamespaces(): void
     {
         $this->markTestSkipped('Not yet ready');
-        return;
-
-        $config = [
-            'form_fields' => [
-                'custom' => [
-                    'type' => 'custom',
-                ],
-            ],
-        ];
-
-        $form = $this->factory->create(CustomDynamicFormType::class, [], $config);
-        $view = $form->createView();
-
-        $this->assertArrayHasKey('custom', $view->children);
-        $this->assertEquals(CustomType::class, get_class($form->get('custom')->getConfig()->getType()->getInnerType()));
     }
 
     public function testInvalidType(): void
     {
         $this->markTestSkipped('Not yet ready');
-        return;
-
-        $this->expectException(InvalidConfigurationException::class);
-        $this->expectExceptionMessageMatches("/Type not found for 'invalid' in dynamic form./i");
-
-        $config = [
-            'form_fields' => [
-                'custom' => [
-                    'type' => 'invalid',
-                ],
-            ],
-        ];
-
-        $form = $this->factory->create(DynamicFormType::class, [], $config);
     }
 
     public function testInvalidConstraint(): void
@@ -194,7 +167,7 @@ class DynamicFormTypeTest extends TypeTestCase
             ],
         ];
 
-        $form = $this->factory->create(DynamicFormType::class, [], $config);
+        $this->factory->create(DynamicFormType::class, [], $config);
     }
 
     public function testInvalidConstraintType(): void
@@ -215,7 +188,7 @@ class DynamicFormTypeTest extends TypeTestCase
             ],
         ];
 
-        $form = $this->factory->create(DynamicFormType::class, [], $config);
+        $this->factory->create(DynamicFormType::class, [], $config);
     }
 
     public function testConstraints(): void
@@ -239,10 +212,10 @@ class DynamicFormTypeTest extends TypeTestCase
         $processedConstraints = $form->get('test1')->getConfig()->getOptions()['constraints'];
 
         // assert first constraint
-        $this->assertInstanceOf(Constraints\NotBlank::class, $processedConstraints[0]);
+        $this->assertInstanceOf(NotBlank::class, $processedConstraints[0]);
 
         // assert second constraint
-        $this->assertInstanceOf(Constraints\Range::class, $processedConstraints[1]);
+        $this->assertInstanceOf(Range::class, $processedConstraints[1]);
         $this->assertEquals(1, $processedConstraints[1]->min);
         $this->assertEquals(100, $processedConstraints[1]->max);
 

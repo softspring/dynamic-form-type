@@ -8,5 +8,5 @@ parameters:
         - tests/
     bootstrapFiles:
         - vendor/autoload.php
-#    ignoreErrors:
-#        - "#expects Symfony\\\\Contracts\\\\EventDispatcher\\\\Event, Softspring\\\\Component\\\\Events\\\\GetResponseEventInterface given.$#"
+    ignoreErrors:
+        - identifier: trait.unused
