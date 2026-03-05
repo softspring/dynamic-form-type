@@ -4,10 +4,10 @@ namespace Softspring\Component\DynamicFormType\Test\Form;
 
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Range;
-use Softspring\Component\DynamicFormType\Form\DynamicFormType;
 use Softspring\Component\DynamicFormType\Form\Extension\DynamicFormExtension;
 use Softspring\Component\DynamicFormType\Form\Resolver\ConstraintResolver;
 use Softspring\Component\DynamicFormType\Form\Resolver\DefaultTypeResolver;
+use Softspring\Component\DynamicFormType\Form\Type\DynamicFormType;
 use Symfony\Component\Form\Exception\InvalidConfigurationException;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -15,7 +15,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Test\Traits\ValidatorExtensionTrait;
 use Symfony\Component\Form\Test\TypeTestCase;
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
-use Symfony\Component\Validator\Constraints;
 
 class DynamicFormTypeTest extends TypeTestCase
 {

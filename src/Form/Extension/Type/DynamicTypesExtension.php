@@ -2,8 +2,6 @@
 
 namespace Softspring\Component\DynamicFormType\Form\Extension\Type;
 
-use Softspring\Component\DynamicFormType\Form\DynamicFormType as DeprecatedDynamicFormType;
-use Softspring\Component\DynamicFormType\Form\DynamicFormTypeInterface as DeprecatedDynamicFormTypeInterface;
 use Softspring\Component\DynamicFormType\Form\Resolver\TypeResolverInterface;
 use Softspring\Component\DynamicFormType\Form\Type\DynamicFormType;
 use Softspring\Component\DynamicFormType\Form\Type\DynamicFormTypeInterface;
@@ -24,7 +22,6 @@ class DynamicTypesExtension extends AbstractTypeExtension
     {
         return [
             DynamicFormTypeInterface::class, DynamicFormType::class,
-            DeprecatedDynamicFormTypeInterface::class, DeprecatedDynamicFormType::class,
         ];
     }
 

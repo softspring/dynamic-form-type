@@ -2,7 +2,7 @@
 
 namespace Softspring\Component\DynamicFormType\Test\Form;
 
-use Softspring\Component\DynamicFormType\Form\DynamicFormType;
+use Softspring\Component\DynamicFormType\Form\Type\DynamicFormType;
 
 class CustomDynamicFormType extends DynamicFormType
 {
