@@ -2,13 +2,20 @@
 
 namespace Softspring\Component\DynamicFormType\Test\Form;
 
+use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 use Softspring\Component\DynamicFormType\Form\Extension\DynamicFormExtension;
 use Softspring\Component\DynamicFormType\Form\Resolver\ConstraintResolver;
 use Softspring\Component\DynamicFormType\Form\Resolver\DefaultTypeResolver;
+use Softspring\Component\DynamicFormType\Form\Type\DynamicFormCollectionType;
+use Softspring\Component\DynamicFormType\Form\Type\DynamicFormType;
+use Symfony\Component\Form\Test\Traits\ValidatorExtensionTrait;
 use Symfony\Component\Form\Test\TypeTestCase;
 
+#[AllowMockObjectsWithoutExpectations]
 class DynamicFormCollectionTypeTest extends TypeTestCase
 {
+    use ValidatorExtensionTrait;
+
     protected function getExtensions(): array
     {
         $extensions = parent::getExtensions();
@@ -20,6 +27,13 @@ class DynamicFormCollectionTypeTest extends TypeTestCase
 
     public function testBasicCollection(): void
     {
-        $this->markTestSkipped('Not yet ready');
+        $form = $this->factory->create(DynamicFormCollectionType::class);
+        $options = $form->getConfig()->getOptions();
+
+        self::assertSame(DynamicFormType::class, $options['entry_type']);
+        self::assertTrue($options['allow_add']);
+        self::assertTrue($options['allow_delete']);
+        self::assertTrue($options['prototype']);
+        self::assertSame(1, $options['prototype_initial_elements']);
     }
 }
