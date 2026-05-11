@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Softspring\Component\DynamicFormType\Test\Form;
 
 use Softspring\Component\DynamicFormType\Form\Type\DynamicFormType;

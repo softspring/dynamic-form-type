@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Softspring\Component\DynamicFormType\Form\Extension;
 
 use Softspring\Component\DynamicFormType\Form\Extension\Type\DynamicConstraintsExtension;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Softspring\Component\DynamicFormType;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;

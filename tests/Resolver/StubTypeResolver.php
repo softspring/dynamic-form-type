@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Softspring\Component\DynamicFormType\Test\Resolver;
 
 use Softspring\Component\DynamicFormType\Form\Resolver\TypeResolverInterface;
