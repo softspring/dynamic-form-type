@@ -2,7 +2,6 @@
 
 namespace Softspring\Component\DynamicFormType\Test\Form;
 
-use PHPUnit\Framework\Attributes\AllowMockObjectsWithoutExpectations;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Range;
 use Softspring\Component\DynamicFormType\Form\Extension\DynamicFormExtension;
@@ -17,7 +16,6 @@ use Symfony\Component\Form\Test\Traits\ValidatorExtensionTrait;
 use Symfony\Component\Form\Test\TypeTestCase;
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
 
-#[AllowMockObjectsWithoutExpectations]
 class DynamicFormTypeTest extends TypeTestCase
 {
     use ValidatorExtensionTrait;
